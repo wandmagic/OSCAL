@@ -17,7 +17,7 @@ build: artifacts checks archives ## Run all pipelines
 artifacts: schemas ## Generate all artifacts
 
 .PHONY: test
-test: validate validate-content
+test: validate-content
 
 .PHONY: checks
 checks: linkcheck validate ## Run all tests and checks

@@ -74,20 +74,20 @@
                   </remarks>
             </define-flag>
             <model>
-                  <choice>
-                        <assembly ref="include-all" min-occurs="1">
-                              <remarks>
-                                    <p>Identifies that all controls are to be included from the imported catalog or profile.</p>
-                              </remarks>
+                  <choice-group min-occurs="1">
+                        <group-as name="include-controls" in-json="ARRAY"/>
+                        <assembly ref="include-all">
+                            <remarks>
+                                <p>Identifies that all controls are to be included from the imported catalog or profile.</p>
+                            </remarks>
                         </assembly>
-                        <assembly ref="select-control-by-id" min-occurs="1" max-occurs="unbounded">
-                              <use-name>include-controls</use-name>
-                              <group-as name="include-controls" in-json="ARRAY"/>
-                              <remarks>
-                                    <p>If <code>with-child-controls</code> is <q>yes</q> on the call to a control, any controls appearing within it (child controls) will be selected, with no additional <code>call</code> directives required. This flag provides a way to include controls with all their dependent controls (enhancements) without having to call them individually.</p>
-                              </remarks>
+                        <assembly ref="select-control-by-id">
+                            <use-name>include-controls</use-name>
+                            <remarks>
+                                <p>If <code>with-child-controls</code> is <q>yes</q> on the call to a control, any controls appearing within it (child controls) will be selected, with no additional <code>call</code> directives required. This flag provides a way to include controls with all their dependent controls (enhancements) without having to call them individually.</p>
+                            </remarks>
                         </assembly>
-                  </choice>
+                    </choice-group>
                   <assembly ref="select-control-by-id" max-occurs="unbounded">
                         <use-name>exclude-controls</use-name>
                         <group-as name="exclude-controls" in-json="ARRAY"/>

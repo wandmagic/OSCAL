@@ -827,7 +827,7 @@
           <description>A <a href="https://pages.nist.gov/OSCAL/concepts/identifier-use/#machine-oriented">machine-oriented</a> identifier reference to the implementation statement in the SSP to which this finding is related.</description>
         </define-field>
         <!-- CHANGED: replaced embedded observation with references -->
-        <define-assembly name="related-observation" max-occurs="unbounded">
+        <define-assembly name="related-observation-from-finding" max-occurs="unbounded">
           <formal-name>Related Observation</formal-name>
           <description>Relates the finding to a set of referenced observations that were used to determine the finding.</description>
           <group-as name="related-observations" in-json="ARRAY"/>
@@ -1293,7 +1293,7 @@
             </model>
          </define-assembly>
 
-         <define-assembly name="related-observation" max-occurs="unbounded">
+         <define-assembly name="related-observation-from-risk" max-occurs="unbounded">
             <formal-name>Related Observation</formal-name>
             <description>Relates the finding to a set of referenced observations that were used to determine the finding.</description>
             <group-as name="related-observations" in-json="ARRAY"/>

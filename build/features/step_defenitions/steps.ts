@@ -2,6 +2,7 @@ import { Given, Then, When } from "@cucumber/cucumber";
 import { formatSarifOutput, isOscalExecutorInstalled } from 'oscal';
 import { validateDirectory, validateDocument } from "oscal/dist/validate";
 import {statSync} from 'fs'
+import {resolve} from 'path'
 Given('the following directories by type:', function(dataTable:any) {
   this.dirsByType = {};
   dataTable.rows().forEach(([type, paths]:any) => {
@@ -26,11 +27,12 @@ When('I validate {string} content in {string}',{timeout:30000}, async function(t
  const isDirectory = path.includes("http")?false:statSync(path).isDirectory();
  const quiet = false;
  this.result = isDirectory ? 
-   await validateDirectory(path, {module: metaschemaPath,quiet}, 'oscal-cli') :
-   await validateDocument(path, {module: metaschemaPath,quiet}, 'oscal-cli');
+   await validateDirectory(path, {module: resolve(metaschemaPath),quiet}, 'oscal-cli') :
+   await validateDocument(path, {module: resolve(metaschemaPath),quiet}, 'oscal-cli');
 });
 Then('all validations should pass without errors', function() {
   if (!this.result.isValid) {
     throw new Error(`Validation failed: ${formatSarifOutput(this.result.log).replace(/\u001b\[[0-9;]*m/g, '')}`);
   }
 });
+

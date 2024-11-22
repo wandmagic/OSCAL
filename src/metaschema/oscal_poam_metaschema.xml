@@ -146,7 +146,7 @@
             <!-- CHANGED: removed "objective-status" per brianrufgsa -->
             <!-- CHANGED: (per Brian) removed "implementation-statement-uuid" since this is in the SAR -->
             <!-- CHANGED: replaced embedded observation with references -->
-            <define-assembly name="related-observation" max-occurs="unbounded">
+            <define-assembly name="related-observation-from-poam" max-occurs="unbounded">
                 <formal-name>Related Observation</formal-name>
                 <description>Relates the poam-item to a set of referenced observations that were used to determine the finding.</description>
                 <group-as name="related-observations" in-json="ARRAY"/>

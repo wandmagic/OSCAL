@@ -21,4 +21,4 @@ Feature: Validate OSCAL Content
       | catalog | ../src/specifications/profile-resolution/requirement-tests/catalogs |
       | profile | ../src/specifications/profile-resolution/profile-resolution-examples/full-test_profile.xml |
       | ssp | https://raw.githubusercontent.com/usnistgov/oscal-content/refs/heads/main/examples/ssp/xml/oscal_leveraged-example_ssp.xml|
-      | poam| https://raw.githubusercontent.com/usnistgov/oscal-content/refs/heads/main/examples/poam/xml/ifa_plan-of-action-and-milestones.xml|
+      | poam| ../src/specifications/valid-content/poam.xml|

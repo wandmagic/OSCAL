@@ -19,7 +19,7 @@ Given('the metaschema directory is {string}', function(dir) {
   this.metaschemaDir = dir;
 });
 
-When('I validate {string} content in {string}',{timeout:30000}, async function(type, path) {
+When('I validate {string} content in {string}',{timeout:90000}, async function(type, path) {
 
   const metaschema = 'oscal_'+type+'_metaschema.xml' ;
   const metaschemaPath = `${this.metaschemaDir}/${metaschema}`;

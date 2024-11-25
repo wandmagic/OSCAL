@@ -157,9 +157,9 @@ validate-composition-%:
 ###################
 
 .PHONY: configure
-configure: ## Validate generated XSD files
+configure: ## install oscal CLI
 	npm install
-	npx oscal@latest use latest
+	npx oscal@2.0.7-rc3 use 2.4.0-SNAPSHOT
 
 
 # All artifacts typically included in a release

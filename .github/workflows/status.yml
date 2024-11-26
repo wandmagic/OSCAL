@@ -43,6 +43,7 @@ jobs:
       - name: Install Dependencies
         run: |
           make configure
+        working-directory: build
       - name: Run all pipelines
         run: |
           make --keep-going build

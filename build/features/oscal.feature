@@ -20,7 +20,9 @@ Feature: Validate OSCAL Content
       | catalog | ../src/specifications/profile-resolution/profile-resolution-examples/output-expected |
       | catalog | ../src/specifications/profile-resolution/requirement-tests/catalogs |
       | profile | ../src/specifications/profile-resolution/profile-resolution-examples/full-test_profile.xml |
-      | ssp | https://raw.githubusercontent.com/usnistgov/oscal-content/refs/heads/main/examples/ssp/xml/oscal_leveraged-example_ssp.xml|
-      | poam| https://raw.githubusercontent.com/usnistgov/oscal-content/refs/heads/main/examples/poam/xml/ifa_plan-of-action-and-milestones.xml|
-      | assessment-plan | https://raw.githubusercontent.com/usnistgov/oscal-content/refs/heads/main/src/examples/ap/xml/ifa_assessment-plan-example.xml |
-      | assessment-results | https://raw.githubusercontent.com/usnistgov/oscal-content/refs/heads/main/src/examples/ar/xml/ifa_assessment-results-example.xml |
+      | profile | ../src/specifications/valid-content/profile.xml|
+      | catalog | ../src/specifications/valid-content/catalog.xml|
+      | ssp | ../src/specifications/valid-content/ssp.xml|
+      | poam | ../src/specifications/valid-content/poam.xml|
+      | assessment-plan | ../src/specifications/valid-content/ap.xml|
+      | assessment-results | ../src/specifications/valid-content/ar.xml|

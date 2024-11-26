@@ -154,6 +154,7 @@
             </description>
             <prop name="version" value="2.1" />
             <prop name="release-date" value="2018-10-15" />
+            <prop name="direction" value="outgoing"/>
             <status state="operational" />
             <responsible-role role-id="maintainer">
                 <party-uuid>ec485dcf-2519-43f5-8e7d-014cc315332d</party-uuid>

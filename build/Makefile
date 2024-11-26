@@ -49,14 +49,11 @@ JSONSCHEMA_OUTPUTS:=$(patsubst $(SRC_DIR)/%_metaschema.xml,$(GENERATED_DIR)/%_sc
 
 $(GENERATED_DIR)/%_schema.json $(GENERATED_DIR)/%_schema.xsd: $(SRC_DIR)/%_metaschema.xml
 	@mkdir -p $(GENERATED_DIR)
-	$(METASCHEMA_CLI) generate-schema --as=json $(SRC_DIR)/$*_metaschema.xml $(GENERATED_DIR)/$*_schema.json --overwrite
-	$(METASCHEMA_CLI) generate-schema --as=xml $(SRC_DIR)/$*_metaschema.xml $(GENERATED_DIR)/$*_schema.xsd --overwrite
-
+	$(METASCHEMA_CLI) generate-schema --as=json $< $(GENERATED_DIR)/$*_schema.json --overwrite
+	$(METASCHEMA_CLI) generate-schema --as=xml $< $(GENERATED_DIR)/$*_schema.xsd --overwrite
+	
 .PHONY: schemas
 schemas: $(XSD_OUTPUTS) $(JSONSCHEMA_OUTPUTS) ## Generate the schemas
-
-.PHONY: test
-test: $(echo "todo") 
 
 .PHONY: clean-schemas
 clean-schemas: ## Remove generated schemas
@@ -159,7 +156,7 @@ validate-composition-%:
 .PHONY: configure
 configure: ## install oscal CLI
 	npm install
-	npx oscal@2.0.7-rc3 use 2.4.0-SNAPSHOT
+	npx oscal@2.0.7-rc5 use 2.4.0-SNAPSHOT
 
 
 # All artifacts typically included in a release

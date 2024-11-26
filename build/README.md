@@ -11,7 +11,7 @@ The build tools in this directory require a Unix environment with the following 
 - [NodeJS](https://nodejs.org/en) (ensure the version matches [`.nvmrc`](./.nvmrc)): Required to perform link checking
 - [oscal-cli](https://github.com/metaschema-framework/oscal-cli) for schema generation & validation
 
-Additionally ensure your environment has standard build tools such as [`git` 2.34.1 or newer](https://git-scm.com/), [`make` 4.3 or newer](https://www.gnu.org/software/make/), [`zip` 3.0 or newer](https://infozip.sourceforge.net/), and [`bash` 3.2 or newer for syntax we require](https://git.savannah.gnu.org/cgit/bash.git/tree/NEWS?h=bash-3.2-beta).
+Additionally ensure your environment has standard build tools such as [`git` 2.34.1 or newer](https://git-scm.com/), [`make` 4.3 or newer](https://git.savannah.gnu.org/cgit/make.git/tree/README.git), [`zip` 3.0 or newer](https://infozip.sourceforge.net/), and [`bash` 3.2 or newer for syntax we require](https://git.savannah.gnu.org/cgit/bash.git/tree/NEWS?h=bash-3.2-beta).
 
 ## Building
 

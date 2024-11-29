@@ -18,6 +18,7 @@ jobs:
       - name: Generate artifacts
         # RELEASE is set to the tag name (vX.X.X) without the first character
         run: |
+          make configure
           make -j2 artifacts archives RELEASE=${GITHUB_REF_NAME:1}
         working-directory: build
       - name: Create release

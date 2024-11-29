@@ -32,7 +32,19 @@ jobs:
           cache-dependency-path: "build/package-lock.json"
       - name: Install xmllint
         run: sudo apt-get install -y libxml2-utils
+      - name: Read node version from `.nvmrc` file
+        id: nvmrc
+        shell: bash
+        run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
+      - name: Install required node.js version
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Dependencies
+        run: |
+          make configure
+        working-directory: build
       - name: Run all pipelines
         run: |
-          make --keep-going all
+          make --keep-going build
         working-directory: build
